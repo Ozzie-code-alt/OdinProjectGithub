@@ -1,6 +1,8 @@
 const btnAdd = document.getElementById('btnAdd')
 const myForm = document.getElementById('myForm')
-
+let totalBooks = document.getElementById('totalBooks')
+let totalRead = document.getElementById('totalRead')
+let totalUnRead = document.getElementById('totalUnread')
 
 function sampleObject (title, author, pages ,haveread){ // object constructor
 this.title = title
@@ -13,6 +15,8 @@ this.haveread = haveread
 // }
 }
 
+   let counter = 0
+   let readCounter = 0, unreadCounter = 0;
 
 myForm.addEventListener('submit', function(event){
     event.preventDefault();
@@ -31,12 +35,13 @@ myForm.addEventListener('submit', function(event){
 
     let newBook = document.createElement("div")
     let Parentcontainer = document.querySelector('.newBooks-Container')
+  
     for(const ket in sample1){
         const paragraph = document.createElement('p')
         const value = sample1[ket]
-        console.log(value)
+        // console.log(value)
         if(value instanceof HTMLInputElement && value.type === 'checkbox'){
-            const isChecked = value.checked ? 'Checked' : 'NotChecked'
+            const isChecked = value.checked ? 'Checked' && readCounter++ : 'NotChecked' && unreadCounter++
             paragraph.textContent = `${ket} : ${isChecked}`
         }
         else{
@@ -46,11 +51,13 @@ myForm.addEventListener('submit', function(event){
         }
         newBook.appendChild(paragraph)
     }
-    
+    counter+=1
     newBook.classList.add('NewBook')
+   
     Parentcontainer.append(newBook)
-    
-
+    totalBooks.textContent = counter
+    totalRead.textContent = readCounter
+    totalUnRead.textContent = unreadCounter
 
 })
 
