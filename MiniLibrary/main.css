@@ -2,25 +2,61 @@
     padding: 0;
     margin: 0;
     outline: red 1px solid;
+    font-family: sans-serif;
 }
 
 .main-container {
     height: 100vh;
-    display:grid; 
-    grid-template-columns: repeat(2,1fr);
     place-items: center;
-   
+   background-color: #342A21;
 }
 
+.main-container .top-container {
+    text-align: center;
+    height: 30vh;
+}
+.main-container .top-container .title-container p{
+    font-weight: 600;
+    font-size: 40px;
+    color: #C9B79C;
+}
+
+.main-container .top-container .Stats-container{
+display: grid;
+grid-template-columns: repeat(3,1fr);
+color: #C9B79C;
+}
 .main-container .btn-container {
-    background-color: aqua;
-    height: 100%;
+
     display: grid;
     align-items: center;
+    justify-content: center;
 }
+
 .main-container .btn-container button{
-    padding: 100px;
-   
+    padding: 50px;
+    background-color: #71816D;
+    border-radius: 15px;
+}
+
+.main-container .middle-container{
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   position: relative;
+}
+
+.main-container .middle-container .myForm{
+
+color: wheat;
+position: absolute;
+bottom: 2px;
+gap:10px
+}
+.main-container .middle-container .myForm label{
+    background-color: black;
+    padding: 10px;
 }
 .main-container .newBooks-Container {
     height: 100%;
@@ -35,3 +71,14 @@
     color: white;
 }
 
+.main-container .bottom-container{
+    height: 30vh;
+}
+
+.hidden{
+    display: none;
+}
+
+.active{
+    display: flex;
+}

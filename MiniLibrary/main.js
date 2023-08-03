@@ -17,10 +17,11 @@ this.haveread = haveread
 myForm.addEventListener('submit', function(event){
     event.preventDefault();
 
+
     const title = myForm.elements.titles.value
     const author = myForm.elements.authors.value
     const pages = myForm.elements.pagess.value
-    const haveread = myForm.elements.haveRead.value
+    const haveread = myForm.elements.haveRead
     let sample1 = new sampleObject(title, author, pages, haveread )
     // console.log(sample1.title)
     // console.log(sample1.author)
@@ -32,9 +33,18 @@ myForm.addEventListener('submit', function(event){
     let Parentcontainer = document.querySelector('.newBooks-Container')
     for(const ket in sample1){
         const paragraph = document.createElement('p')
-        paragraph.textContent = `${ket}: ${sample1[ket]}`
+        const value = sample1[ket]
+        console.log(value)
+        if(value instanceof HTMLInputElement && value.type === 'checkbox'){
+            const isChecked = value.checked ? 'Checked' : 'NotChecked'
+            paragraph.textContent = `${ket} : ${isChecked}`
+        }
+        else{
+            console.log(value.checked)
+            paragraph.textContent = `${ket} : ${sample1[ket]}`
+            
+        }
         newBook.appendChild(paragraph)
-    
     }
     
     newBook.classList.add('NewBook')
@@ -48,18 +58,6 @@ myForm.addEventListener('submit', function(event){
 // console.log(sample1.printThis())
 
 btnAdd.addEventListener('click', function(){
-
-let newBook = document.createElement("div")
-let Parentcontainer = document.querySelector('.newBooks-Container')
-for(const ket in sample1){
-    const paragraph = document.createElement('p')
-    paragraph.textContent = `${ket}: ${sample1[ket]}`
-    newBook.appendChild(paragraph)
-
-}
-
-newBook.classList.add('NewBook')
-Parentcontainer.append(newBook)
-
+myForm.classList.add('active')
 
 })

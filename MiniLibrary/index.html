@@ -9,16 +9,30 @@
 </head>
 <body>
     <div class="main-container">
+        <div class="top-container">
+            <div class="title-container">
+                <p>Book Library</p>
+            </div>
+
+            <div class="Stats-container">
+                <div class="total-books-container">
+                    <p>Total Number of Books: 0</p>
+                </div>
+                <div class="total-unread-container">
+                    <p>Total Unread Books: 0</p>
+                </div>
+                <div class="total-read-books">
+                    <p>Total Read Books: 0</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="middle-container">
          <div class="btn-container">
             <button id="btnAdd"> Add Book</button>
          </div>
-
-
-         <div class="newBooks-Container">
-         
-         </div>
-
-         <form id="myForm">
+         <form id="myForm" class="hidden myForm">
             <label for="titles">title</label>
             <input type="text" id="titles" name="titles">
             <br>
@@ -29,10 +43,18 @@
             <input type="text" id="pagess" name="pagess">
             <br>
             <label for="haveRead">have read</label>
-            <input type="text" id="haveRead" name="haveRead">
+            <input type="checkbox" id="haveRead" name="haveRead" >
             
             <input type="submit" value="submit">
          </form>
+
+        </div>
+
+            <div class="bottom-container">
+         <div class="newBooks-Container">
+         
+         </div>
+        </div>
     </div>
 </body>
 </html>
