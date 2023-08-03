@@ -65,6 +65,13 @@ myForm.addEventListener('submit', function(event){
 // console.log(sample1.printThis())
 
 btnAdd.addEventListener('click', function(){
-myForm.classList.add('active')
+if(myForm.classList.contains('hidden')){
+    myForm.classList.remove('hidden')
+    myForm.classList.add('active')
+}
+else if(myForm.classList.contains('active')){
+    myForm.classList.remove('active')
+    myForm.classList.add('hidden')
+}
 
 })

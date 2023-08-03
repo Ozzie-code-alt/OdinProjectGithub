@@ -1,60 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mini - library</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css" />
     <script src="main.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main-container">
-        <div class="top-container">
-            <div class="title-container">
-                <p>Book Library</p>
-            </div>
-
-            <div class="Stats-container">
-                <div class="total-books-container">
-                    <p>Total Number of Books: <span id="totalBooks"> 0 </span></p>
-                </div>
-                <div class="total-unread-container">
-                    <p> Total Unread Books: <span id="totalUnread">0</span></p>
-                </div>
-                <div class="total-read-books">
-                    <p>Total Read Books: <span id="totalRead">0</span></p>
-                </div>
-            </div>
+      <div class="top-container">
+        <div class="title-container">
+          <p>Book Library</p>
         </div>
 
-
-        <div class="middle-container">
-         <div class="btn-container">
-            <button id="btnAdd"> Add Book</button>
-         </div>
-         <form id="myForm" class="hidden myForm">
-            <label for="titles">title</label>
-            <input type="text" id="titles" name="titles">
-            <br>
-            <label for="authors">author</label>
-            <input type="text" id="authors" name="authors">
-            <br>
-            <label for="pagess">pages</label>
-            <input type="text" id="pagess" name="pagess">
-            <br>
-            <label for="haveRead">have read</label>
-            <input type="checkbox" id="haveRead" name="haveRead" >
-            
-            <input type="submit" value="submit">
-         </form>
-
+        <div class="Stats-container">
+          <div class="total-books-container">
+            <p>Total Number of Books: <span id="totalBooks"> 0 </span></p>
+          </div>
+          <div class="total-unread-container">
+            <p>Total Unread Books: <span id="totalUnread">0</span></p>
+          </div>
+          <div class="total-read-books">
+            <p>Total Read Books: <span id="totalRead">0</span></p>
+          </div>
         </div>
+      </div>
 
-            <div class="bottom-container">
-         <div class="newBooks-Container">
-         
-         </div>
+      <div class="middle-container">
+        <div class="btn-container">
+          <button id="btnAdd">Add Book</button>
         </div>
+        <form id="myForm" class="hidden myForm">
+          <label for="titles">title</label>
+          <input type="text" id="titles" name="titles" />
+          <br />
+          <label for="authors">author</label>
+          <input type="text" id="authors" name="authors" />
+          <br />
+          <label for="pagess">pages</label>
+          <input type="text" id="pagess" name="pagess" />
+          <br />
+          <label for="haveRead">have read</label>
+          <input type="checkbox" id="haveRead" name="haveRead" />
+
+          <input type="submit" value="submit" />
+        </form>
+      </div>
+
+      <div class="bottom-container">
+        <div class="bottom-main-container">
+          <div class="newBooks-Container">
+
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
