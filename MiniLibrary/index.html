@@ -29,22 +29,25 @@
 
       <div class="middle-container">
         <div class="btn-container">
+          <div class="getstarted-container">
+            <p>Get Started</p>
+          </div>
           <button id="btnAdd">Add Book</button>
         </div>
         <form id="myForm" class="hidden myForm">
           <label for="titles">title</label>
-          <input type="text" id="titles" name="titles" />
+          <input type="text" id="titles" name="titles"  required/>
           <br />
           <label for="authors">author</label>
-          <input type="text" id="authors" name="authors" />
+          <input type="text" id="authors" name="authors"  required/>
           <br />
           <label for="pagess">pages</label>
-          <input type="text" id="pagess" name="pagess" />
+          <input type="text" id="pagess" name="pagess" required/>
           <br />
           <label for="haveRead">have read</label>
-          <input type="checkbox" id="haveRead" name="haveRead" />
+          <input type="checkbox" id="haveRead" name="haveRead"/>
 
-          <input type="submit" value="submit" />
+          <input type="submit" value="submit" id="submit" />
         </form>
       </div>
 

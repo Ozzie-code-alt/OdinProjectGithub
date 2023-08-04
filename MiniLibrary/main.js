@@ -26,6 +26,7 @@ myForm.addEventListener('submit', function(event){
     const author = myForm.elements.authors.value
     const pages = myForm.elements.pagess.value
     const haveread = myForm.elements.haveRead
+
     let sample1 = new sampleObject(title, author, pages, haveread )
     // console.log(sample1.title)
     // console.log(sample1.author)
@@ -41,11 +42,12 @@ myForm.addEventListener('submit', function(event){
         const value = sample1[ket]
         // console.log(value)
         if(value instanceof HTMLInputElement && value.type === 'checkbox'){
-            const isChecked = value.checked ? 'Checked' && readCounter++ : 'NotChecked' && unreadCounter++
+            const isChecked = value.checked ? (readCounter++ , 'Checked') : (unreadCounter++, 'NotChecked')
+
             paragraph.textContent = `${ket} : ${isChecked}`
         }
         else{
-            console.log(value.checked)
+            // console.log(value.checked)
             paragraph.textContent = `${ket} : ${sample1[ket]}`
             
         }
@@ -53,7 +55,6 @@ myForm.addEventListener('submit', function(event){
     }
     counter+=1
     newBook.classList.add('NewBook')
-   
     Parentcontainer.append(newBook)
     totalBooks.textContent = counter
     totalRead.textContent = readCounter

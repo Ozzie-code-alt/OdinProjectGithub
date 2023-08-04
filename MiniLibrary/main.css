@@ -1,7 +1,6 @@
 *{
     padding: 0;
     margin: 0;
-    outline: red 1px solid;
     font-family: sans-serif;
 }
 
@@ -33,6 +32,12 @@ color: #C9B79C;
     align-items: center;
     justify-content: center;
 }
+.main-container .btn-container .getstarted-container{
+text-align: center;
+padding-bottom: 1rem;
+color: #C9B79C;
+font-size: 50px;
+}
 
 .main-container .btn-container button{
     padding: 50px;
@@ -55,9 +60,18 @@ position: absolute;
 bottom: 2px;
 gap:10px
 }
+.main-container .middle-container .myForm input{
+    border-radius: 15px;
+    padding-left: 1rem;
+}
+.main-container .middle-container .myForm #submit{
+    width: 100px;
+    padding-right: 1rem;
+}
 .main-container .middle-container .myForm label{
     background-color: black;
     padding: 10px;
+    border-radius: 15px;
 }
 .main-container .newBooks-Container {
     height: 100%;
@@ -71,24 +85,41 @@ gap:10px
     width: 200px;
     height: 200px;
     color: white;
+    animation: popUpAnimation 0.5s ease-in;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+
 }
 .main-container .bottom-container .bottom-main-container{
     height: 100%;
     display: grid;
   place-items: center;
-  
 }
 .main-container .bottom-container{
     height: 50vh;
     background-color: #F1E0C5;
+    overflow: auto;
 }
 
 
 
 .hidden{
     display: none;
+    transition: 0.5s ease-in-out;
 }
 
 .active{
     display: flex;
+    animation: popUpAnimation 0.5s ease-in-out;
+}
+
+@keyframes popUpAnimation {
+    0%{ transform:  scale(0.5);
+        opacity: 0;}
+    100%{
+        transform:  scale(1);
+        opacity: 1;
+    }
+
 }
