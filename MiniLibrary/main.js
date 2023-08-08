@@ -66,7 +66,7 @@ myForm.addEventListener('submit', function(event){
     Parentcontainer.append(newBook)
 
     Parentcontainer.addEventListener('click', function(event){
-        const clickedEvent = event.target
+        const clickedEvent = event.target // a wau to mapp out what i clicked
 
         if(clickedEvent.classList.contains('NewBook')){
             
