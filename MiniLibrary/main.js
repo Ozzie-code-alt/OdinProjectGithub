@@ -4,6 +4,9 @@ let totalBooks = document.getElementById('totalBooks')
 let totalRead = document.getElementById('totalRead')
 let totalUnRead = document.getElementById('totalUnread')
 
+
+
+
 function sampleObject (title, author, pages ,haveread){ // object constructor
 this.title = title
 this.author = author
@@ -16,11 +19,10 @@ this.haveread = haveread
 }
 
    let counter = 0
-   let readCounter = 0, unreadCounter = 0;
+   let readCounter = 0, unreadCounter = 0, newBookId = 0;
 
 myForm.addEventListener('submit', function(event){
     event.preventDefault();
-
 
     const title = myForm.elements.titles.value
     const author = myForm.elements.authors.value
@@ -41,6 +43,8 @@ myForm.addEventListener('submit', function(event){
         const paragraph = document.createElement('p')
         const value = sample1[ket]
         // console.log(value)
+
+
         if(value instanceof HTMLInputElement && value.type === 'checkbox'){
             const isChecked = value.checked ? (readCounter++ , 'Checked') : (unreadCounter++, 'NotChecked')
 
@@ -52,15 +56,43 @@ myForm.addEventListener('submit', function(event){
             
         }
         newBook.appendChild(paragraph)
+        
     }
+
     counter+=1
+    newBookId++
     newBook.classList.add('NewBook')
+    newBook.classList.add(`book-${newBookId}`);
     Parentcontainer.append(newBook)
+
+    Parentcontainer.addEventListener('click', function(event){
+        const clickedEvent = event.target
+
+        if(clickedEvent.classList.contains('NewBook')){
+            
+            const bookId = Array.from(clickedEvent.classList).find(className => className.startsWith('book-'));
+            if(bookId){
+                const id = bookId.replace('book-', '');
+                // Now you have the id of the clicked book
+                
+                const BooktoRemove = document.querySelector(`.book-${id}`)
+
+                if(BooktoRemove){
+                    Parentcontainer.removeChild(BooktoRemove)
+                }
+            }
+        }
+
+    })
+
+    
     totalBooks.textContent = counter
     totalRead.textContent = readCounter
     totalUnRead.textContent = unreadCounter
 
+
 })
+
 
 
 // console.log(sample1.printThis())
@@ -76,3 +108,13 @@ else if(myForm.classList.contains('active')){
 }
 
 })
+
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const NewBookElement = document.querySelector('.NewBook');
+  
+//     NewBookElement.addEventListener('click', function() {
+//       console.log('Hello World');
+//     });
+//   });
